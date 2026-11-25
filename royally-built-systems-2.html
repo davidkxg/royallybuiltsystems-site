@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="dark" />
+<meta name="description" content="Royally Built Systems builds automated outbound growth engines for B2B companies selling high-value services. We build it. You take the meetings." />
+<link rel="icon" href="data:," />
+<title>Royally Built Systems — B2B Outbound Growth Systems | Calgary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0A0D12;
+    --black-2:#0E1219;
+    --card:#121722;
+    --card-2:#151B29;
+    --gold:#C9A227;
+    --gold-2:#E8C84A;
+    --gold-dim:rgba(201,162,39,.16);
+    --text:#F4F1E9;
+    --muted:#A8B0BE;
+    --muted-2:#7E8796;
+    --line:rgba(255,255,255,.08);
+    --gold-line:rgba(201,162,39,.28);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:84px}
+  body{margin:0;background:var(--black);color:var(--text);font-family:"Manrope",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  button,[role="button"]{min-height:44px}
+  /* subtle grid texture */
+  .grid-bg{
+    background-image:
+      linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+    background-size:56px 56px;
+    mask-image:radial-gradient(ellipse 90% 70% at 50% 0%, black 30%, transparent 100%);
+  }
+
+  /* Header */
+  .header{position:sticky;top:0;z-index:50;background:rgba(10,13,18,.88);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .header-inner{max-width:1160px;margin:0 auto;padding:0 20px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;flex-shrink:0}
+  .brand-badge{width:42px;height:42px;flex-shrink:0}
+  .brand-text{line-height:1}
+  .brand-text strong{display:block;font-size:13px;letter-spacing:.18em;font-weight:800}
+  .brand-text span{display:block;font-size:10px;letter-spacing:.32em;color:var(--gold);font-weight:700;margin-top:4px}
+  .nav{display:none;gap:28px;font-size:14px;font-weight:600;color:var(--muted)}
+  .nav a{text-decoration:none;padding:10px 2px}
+  .nav a:hover{color:var(--text)}
+  @media(min-width:860px){.nav{display:flex}}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:800;border-radius:999px;transition:.2s;border:1px solid transparent;cursor:pointer;white-space:nowrap}
+  .btn-gold{background:var(--gold);color:#0A0D12;padding:12px 22px;font-size:14px;box-shadow:0 8px 24px rgba(201,162,39,.22)}
+  .btn-gold:hover{background:var(--gold-2)}
+  .btn-ghost{background:transparent;color:var(--text);border-color:var(--line);padding:12px 20px;font-size:14px}
+  .btn-ghost:hover{border-color:var(--gold-line);background:rgba(255,255,255,.03)}
+  .btn-sm{padding:10px 18px;font-size:13.5px}
+  .btn-lg{padding:16px 28px;font-size:15.5px}
+
+  .wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+  @media(min-width:640px){.wrap{padding:0 28px}}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;padding:64px 0 56px}
+  @media(min-width:768px){.hero{padding:88px 0 72px}}
+  .hero-glow{position:absolute;inset:0;pointer-events:none;background:radial-gradient(600px 320px at 15% -5%, rgba(201,162,39,.14), transparent 65%),radial-gradient(500px 300px at 90% 10%, rgba(201,162,39,.07), transparent 60%)}
+  .hero-inner{position:relative;display:grid;gap:48px}
+  @media(min-width:960px){.hero-inner{grid-template-columns:1.15fr .85fr;align-items:center;gap:56px}}
+  .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.22em;font-weight:800;color:var(--gold);text-transform:uppercase;border:1px solid var(--gold-line);background:rgba(201,162,39,.07);padding:8px 14px;border-radius:999px}
+  .eyebrow i{width:6px;height:6px;background:var(--gold);border-radius:50%;display:block}
+  h1{font-family:"Playfair Display",Georgia,serif;font-size:clamp(42px,6.2vw,68px);line-height:.98;letter-spacing:-.01em;margin:22px 0 20px;font-weight:700}
+  h1 em{font-style:italic;color:var(--gold)}
+  .hero-sub{font-size:18px;line-height:1.65;color:#CBD2DE;max-width:560px;margin:0}
+  .hero-sub strong{color:var(--text)}
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+  .hero-note{margin-top:16px;font-size:13.5px;color:var(--muted);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+  .hero-note b{color:var(--text)}
+  .dot{width:3px;height:3px;background:var(--muted-2);border-radius:50%}
+
+  /* Hero visual - system card */
+  .system-card{background:linear-gradient(180deg,var(--card-2),var(--card));border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+  .system-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;border-bottom:1px solid var(--line);margin-bottom:18px}
+  .system-head span{font-size:11px;letter-spacing:.18em;font-weight:800;color:var(--muted)}
+  .system-head span:last-child{color:var(--gold);border:1px solid var(--gold-line);padding:6px 10px;border-radius:999px;letter-spacing:.08em}
+  .step-mini{display:flex;gap:14px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+  .step-mini:last-of-type{border:none}
+  .step-num{width:36px;height:36px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--gold-line);color:var(--gold);display:grid;place-items:center;font-weight:800;font-size:13px;flex-shrink:0}
+  .step-mini h4{margin:0;font-size:15px}
+  .step-mini p{margin:2px 0 0;font-size:13.5px;color:var(--muted);line-height:1.5}
+  .system-foot{margin-top:16px;background:#0A0D12;border:1px solid var(--gold-line);border-radius:12px;padding:14px 16px;display:flex;gap:12px;align-items:center}
+  .check{width:28px;height:28px;border-radius:50%;background:var(--gold);color:#0A0D12;display:grid;place-items:center;font-weight:900;flex-shrink:0;font-size:14px}
+  .system-foot p{margin:0;font-size:13.5px;line-height:1.45}
+  .system-foot p b{display:block;font-size:14px}
+
+  /* Sections */
+  section{padding:64px 0}
+  @media(min-width:768px){section{padding:84px 0}}
+  .section-label{font-size:11px;letter-spacing:.24em;font-weight:800;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
+  h2{font-family:"Playfair Display",Georgia,serif;font-size:clamp(30px,4vw,44px);line-height:1.08;margin:0 0 14px;font-weight:700;letter-spacing:-.01em}
+  h2 em{color:var(--gold);font-style:italic}
+  .lead{color:var(--muted);font-size:17px;max-width:640px;margin:0;line-height:1.65}
+  .divider{height:1px;background:var(--line);max-width:1160px;margin:0 auto}
+
+  /* Problem cards */
+  .cards{display:grid;gap:16px;margin-top:36px}
+  @media(min-width:768px){.cards{grid-template-columns:repeat(3,1fr)}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}
+  .card-icon{width:44px;height:44px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid var(--line);display:grid;place-items:center;font-size:20px;margin-bottom:18px}
+  .card h3{margin:0 0 10px;font-size:18px;line-height:1.25}
+  .card p{margin:0;color:var(--muted);font-size:15px;line-height:1.65}
+
+  /* How it works */
+  .how-grid{display:grid;gap:16px;margin-top:36px}
+  @media(min-width:640px){.how-grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:960px){.how-grid{grid-template-columns:repeat(4,1fr)}}
+  .how-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;position:relative;overflow:hidden}
+  .how-card::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
+  .how-num{font-family:"Playfair Display",serif;font-size:36px;color:var(--gold);line-height:1;font-weight:700}
+  .how-card h3{margin:14px 0 8px;font-size:16.5px;line-height:1.3}
+  .how-card p{margin:0;font-size:14.5px;color:var(--muted);line-height:1.6}
+
+  /* Qualified band */
+  .qualified{background:linear-gradient(180deg,#111827,#0E1219);border:1px solid var(--gold-line);border-radius:24px;padding:32px 24px;position:relative;overflow:hidden}
+  @media(min-width:768px){.qualified{padding:44px}}
+  .qualified-grid{display:grid;gap:32px}
+  @media(min-width:860px){.qualified-grid{grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}}
+  .checklist{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+  .checklist li{display:flex;gap:14px;background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .checklist li .tick{width:26px;height:26px;border-radius:50%;background:var(--gold);color:#111;display:grid;place-items:center;font-weight:900;font-size:13px;flex-shrink:0;margin-top:1px}
+  .checklist li strong{display:block;font-size:15.5px}
+  .checklist li span{font-size:14px;color:var(--muted)}
+  .qualified-quote{margin-top:20px;font-family:"Playfair Display",serif;font-size:22px;line-height:1.3;font-style:italic}
+  .qualified-quote span{color:var(--gold)}
+
+  /* Who / Dont */
+  .two-col{display:grid;gap:20px}
+  @media(min-width:860px){.two-col{grid-template-columns:1fr 1fr}}
+  .panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px}
+  .panel h3{margin:0 0 14px;font-size:20px;font-family:"Playfair Display",serif}
+  .panel p{color:var(--muted);font-size:15.5px;line-height:1.65;margin:0 0 14px}
+  .panel p:last-child{margin-bottom:0}
+  .dont-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+  .dont-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.55;color:#D6DCE8}
+  .dont-list li::before{content:"—";color:var(--gold);font-weight:800;flex-shrink:0}
+  .tag{display:inline-block;font-size:11px;letter-spacing:.14em;font-weight:800;text-transform:uppercase;color:var(--gold);background:var(--gold-dim);border:1px solid var(--gold-line);padding:6px 10px;border-radius:999px;margin-bottom:16px}
+
+  /* FAQ */
+  .faq-list{margin-top:32px;display:grid;gap:12px;max-width:820px}
+  .faq-item{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .faq-q{width:100%;background:none;border:none;color:var(--text);text-align:left;padding:20px 22px;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:inherit;font-size:16px;font-weight:700;cursor:pointer;min-height:56px}
+  .faq-q span:last-child{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--gold);flex-shrink:0;font-size:18px;line-height:1;transition:.2s}
+  .faq-item.open .faq-q span:last-child{transform:rotate(45deg);background:var(--gold-dim)}
+  .faq-a{display:none;padding:0 22px 20px;color:var(--muted);font-size:15px;line-height:1.65}
+  .faq-item.open .faq-a{display:block}
+
+  /* Final CTA */
+  .final{background:radial-gradient(700px 300px at 50% 0%, rgba(201,162,39,.13), transparent 70%);border:1px solid var(--gold-line);border-radius:28px;padding:48px 24px;text-align:center;position:relative;overflow:hidden}
+  @media(min-width:768px){.final{padding:64px 40px}}
+  .final-badge{width:64px;height:64px;margin:0 auto 20px}
+  .final h2{max-width:640px;margin-left:auto;margin-right:auto}
+  .final p{color:var(--muted);max-width:520px;margin:0 auto 28px;font-size:16.5px}
+
+  /* Footer */
+  footer{border-top:1px solid var(--line);padding:36px 0 96px}
+  @media(min-width:768px){footer{padding-bottom:36px}}
+  .footer-inner{display:flex;flex-direction:column;gap:20px;align-items:flex-start}
+  @media(min-width:768px){.footer-inner{flex-direction:row;justify-content:space-between;align-items:center}}
+  .footer-brand{display:flex;align-items:center;gap:12px}
+  .footer-links{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .social-btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;border:1px solid var(--line);padding:10px 16px;border-radius:999px;font-size:13.5px;font-weight:700;min-height:44px}
+  .social-btn:hover{border-color:var(--gold-line)}
+  .copyright{font-size:13px;color:var(--muted-2)}
+
+  /* Mobile sticky CTA */
+  .mobile-cta{position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:flex;gap:10px;background:rgba(14,18,25,.92);backdrop-filter:blur(12px);border:1px solid var(--gold-line);border-radius:16px;padding:10px;box-shadow:0 16px 40px rgba(0,0,0,.5)}
+  .mobile-cta a{flex:1}
+  .mobile-cta .btn{width:100%}
+  @media(min-width:768px){.mobile-cta{display:none}}
+
+  .reveal{opacity:1;transform:none}
+  @media(max-width:520px){
+    .header-inner{padding:0 12px;height:62px;gap:10px}
+    .brand-badge{width:36px;height:36px}
+    .brand-text strong{font-size:11px;letter-spacing:.13em}
+    .brand-text span{font-size:8.5px;letter-spacing:.26em}
+    .header .btn-sm{padding:9px 14px;font-size:12.5px}
+    .hero{padding:40px 0 40px}
+    .hero-ctas{flex-direction:column;align-items:stretch}
+    .hero-ctas .btn{width:100%}
+    .eyebrow{font-size:10px;letter-spacing:.16em}
+  }
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <a class="brand" href="#top" aria-label="Royally Built Systems — home">
+      <!-- Circular gold crown badge — inline SVG mark -->
+      <svg class="brand-badge" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <circle cx="32" cy="32" r="30" stroke="#C9A227" stroke-width="1.6"/>
+        <circle cx="32" cy="32" r="26.5" stroke="#C9A227" stroke-width="0.7" opacity="0.45"/>
+        <path d="M17 40 L20.5 24 L27 31 L32 20 L37 31 L43.5 24 L47 40 Z" fill="#C9A227"/>
+        <rect x="17" y="42" width="30" height="3.2" rx="1.2" fill="#C9A227"/>
+        <circle cx="20.5" cy="22" r="1.8" fill="#C9A227"/><circle cx="32" cy="18" r="1.8" fill="#C9A227"/><circle cx="43.5" cy="22" r="1.8" fill="#C9A227"/>
+      </svg>
+      <span class="brand-text"><strong>ROYALLY BUILT</strong><span>SYSTEMS</span></span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="#problem">The Problem</a>
+      <a href="#how">How It Works</a>
+      <a href="#qualified">Qualified Meetings</a>
+      <a href="#who">Who It's For</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-gold btn-sm" href="https://calendly.com/royallybuiltsystems/30min" target="_blank" rel="noopener">Book a discovery call</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- HERO -->
+  <div class="hero">
+    <div class="grid-bg" style="position:absolute;inset:0"></div>
+    <div class="hero-glow"></div>
+    <div class="wrap hero-inner">
+      <div>
+        <span class="eyebrow"><i></i> Calgary · B2B Outbound, Built For You</span>
+        <h1>Your next clients won't find you. <em>We go and get them.</em></h1>
+        <p class="hero-sub">Royally Built Systems builds automated outbound growth engines for B2B companies selling high-value services. <strong>We build it. You take the meetings.</strong></p>
+        <div class="hero-ctas">
+          <a class="btn btn-gold btn-lg" href="https://calendly.com/royallybuiltsystems/30min" target="_blank" rel="noopener">Book a discovery call →</a>
+          <a class="btn btn-ghost btn-lg" href="#how">See how it works</a>
+        </div>
+        <p class="hero-note"><b>No SDR hire.</b> <span class="dot"></span> No spray-and-pray. <span class="dot"></span> Calgary-based</p>
+      </div>
+
+      <div class="system-card" aria-label="How the outbound system works at a glance">
+        <div class="system-head"><span>THE SYSTEM</span><span>DONE-FOR-YOU</span></div>
+        <div class="step-mini"><div class="step-num">1</div><div><h4>Right data</h4><p>Companies that actually fit what you sell — and the decision-makers inside them.</p></div></div>
+        <div class="step-mini"><div class="step-num">2</div><div><h4>Infrastructure that lands</h4><p>Domains and inboxes set up properly, so you reach the inbox, not spam.</p></div></div>
+        <div class="step-mini"><div class="step-num">3</div><div><h4>Copy that earns replies</h4><p>Problem-led and personal — written for the person reading it.</p></div></div>
+        <div class="step-mini"><div class="step-num">4</div><div><h4>Meetings on your calendar</h4><p>Replies handled, qualified, and booked. You just show up.</p></div></div>
+        <div class="system-foot"><div class="check">✓</div><p><b>Meetings, not leads</b>A booked call with a decision-maker is pipeline. A list isn't.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PROBLEM -->
+  <section id="problem">
+    <div class="wrap reveal">
+      <p class="section-label">The Problem</p>
+      <h2>Growth you can't control <em>isn't growth.</em></h2>
+      <p class="lead">Most B2B companies don't have a pipeline problem they can solve with more effort. They have three problems that keep repeating.</p>
+      <div class="cards">
+        <article class="card">
+          <div class="card-icon">🎲</div>
+          <h3>Referrals are luck</h3>
+          <p>Great months and dead months, nothing in between you can control.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">📋</div>
+          <h3>A list is not pipeline</h3>
+          <p>500 names in a spreadsheet is not one booked conversation.</p>
+        </article>
+        <article class="card">
+          <div class="card-icon">💸</div>
+          <h3>Hiring is slow and expensive</h3>
+          <p>One SDR means salary, tools, training and months of ramp before a single meeting.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- HOW IT WORKS -->
+  <section id="how">
+    <div class="wrap reveal">
+      <p class="section-label">How It Works</p>
+      <h2>We build it. <em>You take the meetings.</em></h2>
+      <p class="lead">A complete outbound engine — data, infrastructure, copy, and booking — built and run for you.</p>
+      <div class="how-grid">
+        <article class="how-card"><div class="how-num">01</div><h3>Right data</h3><p>We build a list of companies that actually fit what you sell, and the decision-makers inside them.</p></article>
+        <article class="how-card"><div class="how-num">02</div><h3>Infrastructure that lands</h3><p>Sending domains and inboxes set up properly, so your messages reach the inbox, not spam.</p></article>
+        <article class="how-card"><div class="how-num">03</div><h3>Copy that earns replies</h3><p>Problem-led, personal, written for the person reading it — not blasted at a list.</p></article>
+        <article class="how-card"><div class="how-num">04</div><h3>Meetings on your calendar</h3><p>Replies handled, qualified, and booked straight into your calendar. You just show up.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALIFIED -->
+  <section id="qualified" style="padding-top:0">
+    <div class="wrap reveal">
+      <div class="qualified">
+        <div class="qualified-grid">
+          <div>
+            <p class="section-label">What Counts</p>
+            <h2>A meeting only counts when it's:</h2>
+            <p class="lead" style="font-size:16px">We don't count clicks, opens, or raw leads. If it doesn't meet all four, it doesn't count.</p>
+            <p class="qualified-quote">"Anything less is <span>just a lead.</span>"</p>
+            <a class="btn btn-gold" href="https://calendly.com/royallybuiltsystems/30min" target="_blank" rel="noopener" style="margin-top:8px">Book a discovery call →</a>
+          </div>
+          <ul class="checklist">
+            <li><span class="tick">✓</span><div><strong>The right company</strong><span>A genuine fit for what you sell</span></div></li>
+            <li><span class="tick">✓</span><div><strong>The right person</strong><span>A decision-maker, not a gatekeeper</span></div></li>
+            <li><span class="tick">✓</span><div><strong>A real problem</strong><span>A trigger that makes the conversation timely</span></div></li>
+            <li><span class="tick">✓</span><div><strong>Booked on the calendar</strong><span>Date set, time confirmed, invite sent</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- WHO + WHAT YOU DON'T HAVE TO DO -->
+  <section id="who">
+    <div class="wrap reveal">
+      <p class="section-label">Who It's For</p>
+      <h2>Built for B2B companies where a meeting <em>is worth real money.</em></h2>
+      <div class="two-col" style="margin-top:32px">
+        <div class="panel">
+          <span class="tag">Who it's for</span>
+          <p>B2B companies selling high-value services, where the deal is won in a conversation, not a checkout.</p>
+          <p>Built and proven in the managed IT space; the same engine applies anywhere a booked meeting is worth real money.</p>
+          <p style="color:var(--text);font-weight:600">If your growth depends on referrals and hope, this was built for you.</p>
+        </div>
+        <div class="panel">
+          <span class="tag">What you don't have to do</span>
+          <ul class="dont-list">
+            <li>No SDR to hire, train or manage</li>
+            <li>No tools to buy and stitch together</li>
+            <li>No domains burned in your company's name</li>
+            <li>No spray-and-pray blasts</li>
+          </ul>
+          <p style="margin-top:20px">One call to learn your offer and your ideal client, then access to a calendar. We handle the rest.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap reveal">
+      <p class="section-label">FAQ</p>
+      <h2>Questions, <em>answered straight.</em></h2>
+      <div class="faq-list" id="faqList">
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span>How fast until meetings?</span><span>+</span></button>
+          <div class="faq-a">The engine has to be built and warmed properly first — infrastructure and deliverability done right take a few weeks, not days. We'd rather book you real meetings than rush and burn your market.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span>Do you work in our market?</span><span>+</span></button>
+          <div class="faq-a">If you sell a high-value B2B service and a meeting is worth having, likely yes. The discovery call is where we confirm fit — on both sides.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span>What do you need from us?</span><span>+</span></button>
+          <div class="faq-a">One call to learn your offer and your ideal client, then access to a calendar. We handle the rest.</div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false"><span>Is this just cold email?</span><span>+</span></button>
+          <div class="faq-a">No — it's a system: data, infrastructure, copy and follow-up working together. Email is the channel; the engine is the product.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section style="padding-top:0">
+    <div class="wrap reveal">
+      <div class="final">
+        <svg class="final-badge" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <circle cx="32" cy="32" r="30" stroke="#C9A227" stroke-width="1.4"/>
+          <circle cx="32" cy="32" r="26.5" stroke="#C9A227" stroke-width="0.7" opacity="0.45"/>
+          <path d="M17 40 L20.5 24 L27 31 L32 20 L37 31 L43.5 24 L47 40 Z" fill="#C9A227"/>
+          <rect x="17" y="42" width="30" height="3.2" rx="1.2" fill="#C9A227"/>
+        </svg>
+        <h2>Your calendar could be <em>the pipeline.</em></h2>
+        <p>Book a discovery call. We'll confirm fit, map your ideal client, and show you exactly how the engine would work for your business.</p>
+        <a class="btn btn-gold btn-lg" href="https://calendly.com/royallybuiltsystems/30min" target="_blank" rel="noopener">Book a discovery call →</a>
+        <p style="margin-top:16px;font-size:13px;color:var(--muted-2)">30 minutes · No SDR hire · No spray-and-pray</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div>
+      <div class="footer-brand">
+        <svg width="36" height="36" viewBox="0 0 64 64" fill="none" aria-hidden="true"><circle cx="32" cy="32" r="30" stroke="#C9A227" stroke-width="1.6"/><path d="M17 40 L20.5 24 L27 31 L32 20 L37 31 L43.5 24 L47 40 Z" fill="#C9A227"/><rect x="17" y="42" width="30" height="3.2" rx="1.2" fill="#C9A227"/></svg>
+        <div><div style="font-weight:800;letter-spacing:.14em;font-size:13px">ROYALLY BUILT SYSTEMS</div><div style="font-size:13px;color:var(--muted);margin-top:2px">Calgary, Alberta</div></div>
+      </div>
+      <p class="copyright" style="margin-top:14px">© 2026 Royally Built Systems. All rights reserved.</p>
+    </div>
+    <div class="footer-links">
+      <a class="social-btn" href="https://www.instagram.com/royallybuiltsystems" target="_blank" rel="noopener" aria-label="Royally Built Systems on Instagram">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2.5" y="2.5" width="19" height="19" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
+        @royallybuiltsystems
+      </a>
+      <a class="btn btn-gold btn-sm" href="https://calendly.com/royallybuiltsystems/30min" target="_blank" rel="noopener">Book a discovery call</a>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-cta" aria-hidden="false">
+  <a class="btn btn-gold" href="https://calendly.com/royallybuiltsystems/30min" target="_blank" rel="noopener">Book a discovery call →</a>
+</div>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var btn = item.querySelector('.faq-q');
+    btn.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+  // Sections are visible by default — no scroll-hidden content.
+</script>
+</body>
+</html>
